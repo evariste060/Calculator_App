@@ -1,6 +1,13 @@
-type ButtonProps = {text:string|number,color:string,bg:string};
-export default function Button({text,color,bg}:ButtonProps){
+type ButtonProps = {
+    text:string,
+    color:string,
+    bg:string,
+    onClick:(text:string)=>void
+};
+export default function Button({text,color,bg, onClick}:ButtonProps){
     return (
-        <button className={`p-8 border ${color} ${bg}  border-white font-bold  text-2xl`}>{text}</button>
+        <button className={`p-8 border ${color} ${bg}  border-white font-bold  text-2xl`}
+         onClick={()=>onClick(text)}>{text}
+        </button>
     )
 }

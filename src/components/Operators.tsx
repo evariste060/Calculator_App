@@ -1,9 +1,17 @@
 import Button from "./Button"
-export default function Operators(){
+import type { buttonType } from "./Numbers"
+export default function Operators({handleClick}:buttonType){
     const operators = ["/","x","-","+","="]
     return (
         <div className=" flex flex-col ">
-            {operators.map(operator=><Button text={operator} color="bg-orange-500 flex-1" bg="text-white"/>)}
+            {operators.map((operator,i)=>(
+                <Button 
+                    key={i} 
+                    onClick={handleClick}
+                    text={operator} 
+                    color="bg-orange-500 flex-1" 
+                    bg="text-white"
+                />))}
         </div>
     )
 
