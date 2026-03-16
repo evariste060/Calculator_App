@@ -15,7 +15,7 @@ function App(){
   const handleOperator = (op:string) => {
     setPrevious(number)
     setOperator(op)
-    setNumber("")
+    setNumber('')
   }
   const calculate = () => {
   if (!operator || !previous) return
@@ -33,10 +33,10 @@ function App(){
       result = prev * current
       break
     case "/" :
-      result = (current !== 0)? prev/current:0
+      result = prev/current
       break
     case "%" :
-      result =(current !== 0)? prev%current:0
+      result =prev%current
       break
   }
   setNumber (String(result))
@@ -59,6 +59,9 @@ function App(){
         break
       case "+/-":
         changeSign()
+        break
+      case ".":
+        display(value)
         break
       default:
         handleOperator(value)
